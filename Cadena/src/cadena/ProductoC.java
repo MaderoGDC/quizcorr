@@ -5,8 +5,8 @@
  */
 package cadena;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -14,11 +14,9 @@ import java.util.Date;
  */
 public class ProductoC extends Producto{
     
-    public ProductoC(String nombre, Date fecha_e, Eslabon eslabon) {
+    public ProductoC(String nombre, LocalDate fecha_e, Eslabon eslabon) {
         super(nombre, fecha_e, eslabon);
-    }
-    
-    
+    }    
     
     @Override
     public void addDato(Dato dato) {

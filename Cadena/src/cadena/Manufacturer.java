@@ -5,6 +5,7 @@
  */
 package cadena;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -16,18 +17,20 @@ import java.util.Scanner;
 public class Manufacturer extends Eslabon {
     private Scanner lec;
     private ArrayList<Producto> Mp;
-    private ArrayList<ProductoM> productosM;        
+    private ArrayList<ProductoM> productosM; 
+    
     public Manufacturer(String nombre, String descripcion, String direccion) {
         super(nombre, descripcion, direccion);
     }
     
-    public void registrar(ArrayList<Producto> Mp, Date fecha_e,String nombre){
-        ProductoM pm = new ProductoM(Mp, nombre, fecha_e, this);
-        this.Mp.clear();
+    public void registrar(ArrayList<ProductoC> Mp, LocalDate fecha_e,String nombre,int lote){
+        ProductoM pm = new ProductoM(Mp,lote, nombre, fecha_e, this);
         pm.datos.add(new Dato(fecha_e, this));
         this.productosM.add(pm);
+        this.Mp.clear();
+
     }
-    public void enviar (Distribution d, Date fecha_s){
+    public void enviar (Distribution d, LocalDate fecha_s){
         for (ProductoM p : productosM) {            
             p.datos.get(0).setEslabonS(d);
             p.datos.get(0).setFechas(fecha_s);

@@ -5,43 +5,44 @@
  */
 package cadena;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 /**
  *
  * @author CARITO
  */
 public class Dato {
-    private Date fechae;
-    private Date fecha_s;
+    private LocalDate fechae;
+    private LocalDate fecha_s;
     private Eslabon eslabonE;
     private Eslabon eslabonS;
 
-    public Dato(Date fechae, Date fecha_s, Eslabon eslabonE, Eslabon eslabonS) {
+    public Dato(LocalDate fechae, LocalDate fecha_s, Eslabon eslabonE, Eslabon eslabonS) {
         this.fechae = fechae;
         this.fecha_s = fecha_s;
         this.eslabonE = eslabonE;
         this.eslabonS = eslabonS;
     }
 
-    public Dato(Date fechae, Eslabon eslabonE) {
+    public Dato(LocalDate fechae, Eslabon eslabonE) {
         this.fechae = fechae;
         this.eslabonE = eslabonE;
     }
 
-    public Date getFechae() {
+    public LocalDate getFechae() {
         return fechae;
     }
 
-    public void setFechae(Date fechae) {
+    public void setFechae(LocalDate fechae) {
         this.fechae = fechae;
     }
 
-    public Date getFechas() {
+    public LocalDate getFechas() {
         return fecha_s;
     }
 
-    public void setFechas(Date fechas) {
+    public void setFechas(LocalDate fechas) {
         this.fecha_s = fechas;
     }
 

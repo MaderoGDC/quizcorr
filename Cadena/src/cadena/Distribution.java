@@ -5,6 +5,7 @@
  */
 package cadena;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -28,13 +29,14 @@ public class Distribution extends Eslabon{
     public void AgrPm(ProductoM pc){
         this.productos.add(pc);
     }
-    public void enviar( Retail r, Date fecha_s){
+    public void enviar( Retail r, LocalDate fecha_s){
          for (ProductoM p : productos) {
             Dato d1 = new Dato(fecha_s, r); 
             p.datos.get(1).setEslabonE(p.datos.get(0).getEslabonS());
             p.datos.get(1).setFechae(p.datos.get(0).getFechas());
+            p.getDatos().get(1).setEslabonS(r);
+            p.getDatos().get(1).setFechas(fecha_s);
             r.AgrPm(p);
-           
             }
         productos.clear();
     }

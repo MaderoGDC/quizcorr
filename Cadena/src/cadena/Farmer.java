@@ -5,6 +5,7 @@
  */
 package cadena;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -18,11 +19,11 @@ import java.util.Date;
             super(nombre, descripcion, direccion);
         }
     
-    public void registrar(String nombre, Date fechae){
+    public void registrar(String nombre, LocalDate fechae){
         ProductoC p =  new ProductoC(nombre,fechae,this);
         this.productosC.add(p);
     }    
-    public void enviar (Manufacturer m, Date fecha_s){
+    public void enviar (Manufacturer m, LocalDate fecha_s){
         for (Producto p : productosC) {
             m.AgrMp(p);
             p.datos.get(0).setEslabonS(m);
